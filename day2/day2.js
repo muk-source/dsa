@@ -3,8 +3,8 @@
 function productExceptSelf(nums) {
   var n = nums.length;
   var answer = new Array(n).fill(1);
-  var leftProduct = new Array(n).fill(1);
-  var rightProduct = new Array(n).fill(1);
+  var leftProduct = new Array(n).fill(1);   
+  var rightProduct = new Array(n).fill(1);  
 
   for (var i = 1; i < n; i++) {
     leftProduct[i] = leftProduct[i - 1] * nums[i - 1];
@@ -38,6 +38,9 @@ function isValidSudoku(board) {
       if (seen.has(row) || seen.has(col) || seen.has(box)) {
         return false;
       }
+      seen.add(row)
+      seen.add(col)
+      seen.add(box)
     }
   }
   return true;
